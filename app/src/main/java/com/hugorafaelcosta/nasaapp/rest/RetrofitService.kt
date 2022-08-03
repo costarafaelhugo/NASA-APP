@@ -21,6 +21,10 @@ interface RetrofitService {
 
             retrofit.create(RetrofitService::class.java)
         }
+
+        fun getInstance() : RetrofitService{
+            return retrofitService
+        }
     }
 
     //https://api.nasa.gov/planetary/
