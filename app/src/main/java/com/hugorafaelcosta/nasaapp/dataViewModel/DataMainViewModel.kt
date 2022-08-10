@@ -11,20 +11,28 @@ import retrofit2.Response
 
 class DataMainViewModel : ViewModel() {
 
-    private val liveData = MutableLiveData<String>()
-    val _liveData: LiveData<String> = liveData
+    private val explanationLiveData = MutableLiveData<String>()
+    private val copyrightLiveData = MutableLiveData<String>()
+    private val imageHDR = MutableLiveData<String>()
+
+    val explanation_liveData: LiveData<String> = explanationLiveData
+    val copyright_liveData: LiveData<String> = copyrightLiveData
+    val image_HDR: LiveData<String> = imageHDR
+
     val repository = DataMainRepository()
     val errorMessage = MutableLiveData<String>()
 
     fun getDataImages() {
 
-        val request = repository.getJoke()
+        val request = repository.getData()
 
         request.enqueue(object : Callback<DataModel> {
             override fun onResponse(call: Call<DataModel>?, request: Response<DataModel>?) {
                 if (request?.code() == 200) {
                     val dataImage = request.body()
-                    liveData.postValue(dataImage?.explanation)
+                    explanationLiveData.postValue(dataImage?.explanation)
+                    copyrightLiveData.postValue(dataImage?.copyright)
+                    imageHDR.postValue(dataImage?.image)
                 }
             }
 

@@ -13,10 +13,10 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        startChuckNorrisJokesFragment()
+        startDataFragment()
     }
 
-    private fun startChuckNorrisJokesFragment() {
+    private fun startDataFragment() {
         val dataFragment = DataImageFragment()
         supportFragmentManager
             .beginTransaction()
