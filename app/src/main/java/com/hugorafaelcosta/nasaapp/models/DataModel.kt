@@ -9,6 +9,6 @@ data class DataModel(
     val date: String,
     @SerializedName("explanation")
     val explanation: String,
-    @SerializedName("hdurl")
+    @SerializedName("url")
     val image: String
 )

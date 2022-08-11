@@ -7,10 +7,8 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.bumptech.glide.Glide
-import com.bumptech.glide.request.RequestOptions
 import com.hugorafaelcosta.nasaapp.dataViewModel.DataMainViewModel
 import com.hugorafaelcosta.nasaapp.databinding.FragmentDataImageBinding
-import com.hugorafaelcosta.nasaapp.models.DataModel
 
 
 class DataImageFragment : Fragment() {
@@ -44,14 +42,13 @@ class DataImageFragment : Fragment() {
 
             viewModel.image_HDR.observe(viewLifecycleOwner) {
 
-                val bindData = DataModel("", "", "", "")
-                val requestOptions = RequestOptions()
-                    //.placeholder(R.drawable.galaxia)
-                    .error(R.drawable.ic_launcher_background)
+//                val bindData = DataModel("", "", "", "")
+//                val requestOptions = RequestOptions()
+//                    //.placeholder(R.drawable.galaxia)
+////                    .error(R.drawable.ic_launcher_background)
 
                 Glide.with(binding.imageIv)
-                    .applyDefaultRequestOptions(requestOptions)
-                    .load(bindData.image)
+                    .load(it)
                     .into(binding.imageIv)
             }
 

@@ -3,7 +3,7 @@ package com.hugorafaelcosta.nasaapp.viewmodel.main
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.hugorafaelcosta.nasaapp.model.ImageData
-import com.hugorafaelcosta.repositories.MainRepository
+import com.hugorafaelcosta.nasaapp.repositories.MainRepository
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

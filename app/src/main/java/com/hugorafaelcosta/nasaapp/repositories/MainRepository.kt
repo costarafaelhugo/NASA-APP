@@ -1,4 +1,4 @@
-package com.hugorafaelcosta.repositories
+package com.hugorafaelcosta.nasaapp.repositories
 
 import com.hugorafaelcosta.nasaapp.rest.RetrofitService
 
